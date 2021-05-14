@@ -1,0 +1,363 @@
+.table-container{
+    margin-bottom: 20px;
+}
+
+.table-container > table{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+table { border-collapse:collapse }
+
+
+thead{
+    background-color: rgb(95, 95, 95);
+}
+
+th{
+    color: white;
+}
+
+table{
+    border-collapse:collapse
+}
+
+tr:nth-child(even){
+    background-color: rgb(207, 207, 207);
+}
+
+.update,
+.delete{
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 5px; 
+    transition: 450ms all;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.update{
+    color: white;
+    background-color: rgb(140, 182, 185);   
+}
+
+.update:hover{
+    color: white;
+    background-color: rgb(68, 227, 241);   
+}
+
+.delete{
+    color: white;
+    background-color: rgb(196, 0, 0);   
+}
+
+.delete:hover{
+    background-color: rgb(255, 6, 6);   
+}
+
+.td-update,
+.td-delete{
+    padding: 0;
+}
+
+.modal-container{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.459);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    transition: 450ms all;
+    z-index: 9999;
+}
+
+.modal-container-delete{
+    transition: 200ms all;   
+}
+
+.modal-content{
+    background-color: white;
+    max-width: 80vw;
+    min-width: fit-content;
+    min-height: fit-content;
+    max-height: 80vh;
+    overflow: hidden;
+    border-radius: 20px;
+    transform: scale(0);
+    transition: 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.modal-update-content{
+    display: flex;
+}
+
+.modal-update-content > .img{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.modal-update-content img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.modal-update-content p{
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.modal-update-content > .form{
+    width: 400px;
+    height: 400px;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.update-book > h1,
+.add-book > h1{
+    text-transform: capitalize;
+    text-transform: capitalize;
+    padding: 0 20px 20px 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #2d3748;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form > input,
+form > select{
+    padding: 15px;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+}
+
+form > #image::-webkit-file-upload-button{
+    visibility: hidden;
+    display: none;
+}
+
+form > .input_file,
+form > .input_file_add{
+    padding: 13px;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    border: 1px solid #2d3748;
+    color: #2d3748 !important;
+}
+
+form > .input_file::after,
+form > .input_file_add::after{
+    content: ", Click for Select a Image";
+}
+
+form > .image-active{
+    background-color: #eb3a0e;
+    border: none;
+    color: white !important;
+}
+
+form > select{
+    cursor: pointer;
+    font-size: 1rem;
+    appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+    background-color: #fff;
+    transition: 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+form > label,
+form > p {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(88, 88, 88) !important;
+    text-transform: capitalize;
+}
+
+form > label:hover{
+    color: rgb(54, 54, 54);
+}
+
+form > button {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    width: fit-content;
+    margin-left: auto;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+form > button:hover{
+    background-color: #2d3748;
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+.content-delete{
+    background-color: #ffc014;
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.content-delete h1{
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0 10px 10px 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.content-delete > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.content-delete button{
+    margin: 5px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+.content-delete > form{
+    display: inline-block;
+}
+
+.content-delete button.no{
+    background-color: white;
+    color: #2d3748;
+}
+
+.content-delete button.yes{
+    background-color: #f08409;
+    transition: all 200ms;
+}
+
+.content-delete button.yes:hover{
+    background-color: rgb(255, 94, 0);
+}
+
+
+.modal-child-show{
+    transform: scale(1);
+}
+
+.button-add{
+    display: grid;
+    place-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(247, 191, 37);
+    margin: 0 6rem 40px 0;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+    border: 5px solid rgba(0, 0, 0, 0.815);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
+.button-add:hover{
+    background-color: white;
+    color: rgb(247, 191, 37);
+    border: 5px solid rgb(247, 191, 37);
+}
+
+.modal-add{
+    overflow-y: auto;
+    width: 80vw;
+}
+
+.modal-add-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+}
+
+.modal-add-content >img{
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.modal-add-content > .form{
+    overflow-y: auto;
+    height: 400px;
+    margin: 0 20px 20px 20px;
+    padding: 5px;
+    width: 100%;
+}
+
+.modal-add-content > .form > form > label:first-child{
+    margin-top: 0;
+}
+
+.update-book{
+    margin: 20px;
+}
+
+form > .jk > label {
+    cursor: pointer;
+    margin: 20px 0 5px 0;
+    padding-left: 5px;
+    text-transform: capitalize;
+    margin-top: 10px;
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(88, 88, 88);
+    text-transform: capitalize;
+}
+

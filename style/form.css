@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+section.container {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.form {
+  border-radius: 19px;
+  border: 2px solid #444;
+  padding: 20px;
+}
+form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 10px 0;
+}
+form > label,
+form > .jk > label {
+  cursor: pointer;
+  margin: 20px 0 5px 0;
+  padding-left: 5px;
+  text-transform: capitalize;
+}
+form > .jk > label {
+  margin-top: 10px;
+  display: inline-block;
+}
+form > p {
+  margin: 20px 0 5px 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+form > input {
+  outline: none;
+  background-color: rgb(240, 240, 240);
+  font-size: 1rem;
+  border-radius: 5px;
+  height: 35px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #444;
+}
+form > select {
+  border-radius: 5px;
+  height: 35px;
+  font-size: 1rem;
+  padding: 5px;
+  background-color: white;
+  outline: none;
+}
+.btn {
+  font-weight: 700;
+  width: 81px;
+  height: 38px;
+  color: rgb(240, 240, 240);
+  background: #444;
+  padding: 5px;
+  margin: 20px 0 0 auto;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+form > input:active {
+  border: none;
+  outline: none;
+}

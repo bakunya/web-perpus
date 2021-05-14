@@ -1,0 +1,337 @@
+article.card{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    text-transform: capitalize;
+    grid-gap: 20px;
+    margin: 40px;
+}
+
+section.card{
+    border-radius: 10px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content h1{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+}
+
+.card-content p{
+    font-size: 0,8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.card-content button{
+    display: block;
+    margin: 0 5px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card-content button:hover{
+    color: white;
+}
+
+.button-nav{
+    display: grid;
+    place-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(97, 194, 121);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 40px 0;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+    border: 5px solid rgba(0, 0, 0, 0.815);
+}
+
+.fixed-nav{
+    transition: 250ms ease-in-out;
+    transform: scale(0);
+    position: fixed;
+    width: fit-content;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 120px 0;
+    border: 5px solid rgb(102, 163, 125);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.fixed-nav a{
+    padding: 20px 60px;
+    width: 100%;
+    height: 100%;
+    display:inline-block;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-borrow{
+    color: white;
+    background-color: rgb(12, 168, 179);    
+}
+
+.modal-container-detail,
+.modal-container-borrow,
+.modal-container-update{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.459);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    transition: 450ms all;
+    z-index: 9999;
+}
+
+.modal-detail{
+    min-height: fit-content;
+    box-sizing: border-box;
+}
+
+.modal-detail > h1{
+    text-transform: capitalize;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #2d3748;
+}
+
+.modal-detail,
+.modal-borrow{
+    max-width: 80vw;
+    max-height: 90vh;
+    min-width: 60vw;
+    background: rgb(255, 255, 255);
+    overflow-x: auto;
+    transition: 450ms all;
+    transform: scale(0);
+    border-radius: 20px
+}
+
+.modal-child-show,
+.show{
+    transform: scale(1);
+}
+
+.hidden{
+    display: none;
+}
+
+.modal-borrow{
+    height: fit-content;
+}
+
+.modal-detail-content > .info{
+    width: 100%;
+    height: 450px;
+    overflow-y: auto;
+}
+
+.modal-detail-content > .info >*:first-child{
+    padding-top: 0;
+}
+
+.modal-detail-content > .info > *{
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 23px;
+}
+
+.modal-detail-content > .info > * > span{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-borrow > h1 {
+    text-transform: capitalize;
+    padding: 30px;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #2d3748;
+}
+
+.modal-borrow-content,
+.modal-detail-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    padding: 0 20px 20px 20px;
+}
+
+.modal-borrow-content> img,
+.modal-detail-content> img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.modal-borrow-content > form {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    margin-top: 0;
+}
+
+.modal-borrow-content > form > label {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(88, 88, 88);
+}
+
+.modal-borrow-content > form > label:hover{
+    color: rgb(54, 54, 54);
+}
+
+.modal-borrow-content > form > input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+}
+
+.modal-borrow-content > form > input.book_id{
+    background-color: rgb(238, 238, 238);
+}
+
+.modal-borrow-content > form > button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    width: fit-content;
+    margin-left: auto;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.modal-borrow-content > form > button:hover{
+    background-color: #2d3748;
+    color: white;
+}
+
+/* .show{
+    transition: 450ms all;
+    transform: scale(1);
+} */
+
+
+/* hover effect */
+.fixed-nav a:hover{
+    background-color: rgb(102, 163, 125);
+    color: black;
+}
+
+.button-nav:hover{
+    background-color: white;
+    color: rgb(102, 163, 125);
+    border: 5px solid rgb(102, 163, 125);
+}
+
+/* media query */
+
+@media (max-width: 800px){
+    .modal{
+        width: 90vw;
+    }   
+}
+
+@media (max-width: 650px){
+    nav{
+        flex-direction: column;
+    } 
+    nav .logo{
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    nav .nav-right{
+        margin: 0 auto;
+    }
+    article.card{
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    }
+    .button-nav{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .fixed-nav{
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 20px 100px 0;
+    }
+}
